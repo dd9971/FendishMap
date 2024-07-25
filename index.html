@@ -24,8 +24,13 @@
             filter: brightness(1.2);
         }
         .expanded {
-            max-width: 140vw !important;
-            max-height: 125vh !important;
+             position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90vw !important;
+            max-height: 90vh !important;
+            z-index: 1000;
             filter: none !important;
         }
     </style>
