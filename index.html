@@ -11,6 +11,7 @@
             padding: 0;
             background: url('hatbackground.jpg') repeat;
             background-size: 150% 150%; /* Ustawienie rozmiaru tła większego niż ekran */
+            background-attachment: fixed; /* Przyklejenie tła do ekranu */
         }
         #myImg {
             width: auto;
@@ -24,18 +25,9 @@
             filter: brightness(1.2);
         }
         .expanded {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             max-width: 90vw !important;
             max-height: 90vh !important;
-            z-index: 1000;
             filter: none !important;
-        }
-        h1 {
-            position: relative;
-            z-index: 500;
         }
     </style>
 </head>
@@ -58,4 +50,3 @@
 
 </body>
 </html>
-
