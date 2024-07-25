@@ -11,6 +11,7 @@
             padding: 0;
             background: url('hatbackground.jpg') repeat;
             background-size: 200px 200px; /* Ustawienie mniejszego rozmiaru obrazu tła */
+            overflow-x: hidden; /* Blokowanie przewijania poziomego */
         }
         #myImg {
             width: auto;
@@ -18,7 +19,7 @@
             max-width: 30vw;
             max-height: 30vh;
             cursor: pointer;
-            transition: all 0.5s ease; /* Dodanie płynnego przejścia */
+            transition: all 0.25s ease;
         }
         #myImg:not(.expanded):hover {
             filter: brightness(1.2);
@@ -32,7 +33,6 @@
             max-height: 100vh !important;
             z-index: 100;
             filter: none !important;
-            transition: all 0.5s ease; /* Dodanie płynnego przejścia */
         }
     </style>
 </head>
@@ -47,8 +47,10 @@
     img.onclick = function() {
         if (img.classList.contains('expanded')) {
             img.classList.remove('expanded');
+            document.body.style.overflow = ''; // Odblokowanie przewijania
         } else {
             img.classList.add('expanded');
+            document.body.style.overflow = 'hidden'; // Blokowanie przewijania
         }
     }
 </script>
