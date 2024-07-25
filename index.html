@@ -29,11 +29,13 @@
             height: 100%;
             overflow: auto;
             background-color: rgba(0,0,0,0.8);
+            text-align: center;
         }
         .modal-content {
             margin: auto;
-            display: block;
-            width: 90vw;
+            display: inline-block;
+            width: auto;
+            max-width: 90vw;
             height: auto;
             max-height: 90vh;
             cursor: pointer;
@@ -63,7 +65,7 @@
         }
     }
 
-    modalImg.onclick = function() {
+    modal.onclick = function() {
         modal.style.display = "none";
     }
 </script>
