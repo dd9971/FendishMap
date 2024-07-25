@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FIND FIEND!</title>
+    <title>Image Display Page</title>
     <style>
         body {
             text-align: center;
             margin: 0;
             padding: 0;
             background: url('hatbackground.jpg') repeat;
-            background-size: 200px 200px; /* Ustawienie mniejszego rozmiaru obrazu tła */
+            background-size: 150% 150%; /* Ustawienie rozmiaru tła większego niż ekran */
+            background-attachment: fixed; /* Przyklejenie tła do ekranu */
         }
         #myImg {
             width: auto;
             height: auto;
-            max-width: 30vw;
-            max-height: 30vh;
+            max-width: 60vw;
+            max-height: 60vh;
             cursor: pointer;
             transition: all 0.25s ease;
         }
@@ -24,17 +25,26 @@
             filter: brightness(1.2);
         }
         .expanded {
-            max-width: 140vw !important;
-            max-height: 125vh !important;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90vw !important;
+            max-height: 90vh !important;
+            z-index: 1000;
             filter: none !important;
+        }
+        h1 {
+            position: relative;
+            z-index: 500;
         }
     </style>
 </head>
 <body>
-<div>
+
 <h1>Image Display</h1>
 <img id="myImg" src="image.jpg" alt="Your Image">
-</div>
+
 <script>
     var img = document.getElementById("myImg");
 
